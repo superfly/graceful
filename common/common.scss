@@ -79,13 +79,6 @@ tbody {
 	@media screen and (max-width: 775px) {
 		padding: 1.5em;
 	}
-	padding-bottom: 5% !important; //overriding inline style
-	@media screen and (max-width: 1120px) {
-		width: 80%;
-	}
-	@media screen and (max-width: 1075px) {
-		width: 85%;
-	}
 }
 
 .btn,
