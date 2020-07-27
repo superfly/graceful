@@ -163,6 +163,11 @@ header.d-header {
   }
 }
 
+.d-header-icons .d-icon {
+  font-size: 1.25em;
+  color: $secondary;
+}
+
 .d-header-icons .icon:hover {
   background: $tertiary-low;
   .d-icon {
