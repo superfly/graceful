@@ -20,7 +20,7 @@ img.avatar {
 .d-header {
   height: 70px;
   background: linear-gradient(to right, #3c83e7, #6828c3);
-  box-shadow: 0 1px 1px hsla(215, 75%, 36%, 8%), 0 4px 12px hsla(215, 75%, 36%, 12%), 0 12px 24px hsla(215, 75%, 36%, 6%);
+  box-shadow: 0 1px 1px hsla(215, 75%, 36%, .08), 0 4px 12px hsla(215, 75%, 36%, .12), 0 12px 24px hsla(215, 75%, 36%, .06);
   .panel {
     flex: 0 0 auto;
   }
