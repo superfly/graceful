@@ -59,15 +59,20 @@ tbody {
 }
 
 #main {
-	padding-top: 120px;
-	padding-bottom: 120px;
+	padding-top: 100px;
+  padding-bottom: 100px;
+  
+  @media screen and (max-width: 775px) {
+    padding-top: 60px;
+    padding-bottom: 0;
+  }
 }
 
 #main-outlet {
 	background: $secondary;
 	border-radius: 10px;
 	width: calc(100% - 2em);
-	max-width: 1100px;
+	max-width: 1270px;
 	padding: 2em 2em 5%;
 	box-sizing: border-box;
 	padding-bottom: 5% !important;
@@ -78,6 +83,9 @@ tbody {
 	}
 	@media screen and (max-width: 775px) {
 		padding: 1.5em;
+		margin: 0;
+        width: 100%;
+        border-radius: 0;
 	}
 }
 
@@ -384,4 +392,57 @@ span.user-title {
 .crawler > #main-outlet,
 noscript > #main-outlet {
 	padding-top: 6em;
+}
+
+.composer-popup {
+  position: absolute;
+  width: calc(50% - 78px);
+  max-width: 724px;
+  top: 16px;
+  bottom: 16px;
+  left: 51%;
+  overflow-y: auto;
+  z-index: 500;
+  box-shadow: 0 1px 1px hsla(215, 75%, 36%, .08), 0 4px 12px hsla(215, 75%, 36%, .12), 0 12px 24px hsla(215, 75%, 36%, .06);
+  background: hsl(48, 100%, 77%);
+  border-radius: 8px;
+  padding: 10px 24px 35px 24px;
+}
+
+.composer-popup a.close {
+  right: 14px;
+  top: 12px;
+}
+
+.composer-popup a.close:before {
+  position: relative;
+  top: -.1em;
+}
+
+.svg-icon, .svg-icon-title {
+  height: .9em;
+  width: .9em;
+}
+
+.extra-info-wrapper .header-title {
+  font-size: 1.1em;
+  margin-bottom: .1em;
+}
+
+.extra-info-wrapper .badge-wrapper.bullet span.badge-category, 
+.extra-info-wrapper .badge-wrapper.bar span.badge-category, 
+.extra-info-wrapper .badge-wrapper.none span.badge-category {
+  color: rgba(255, 255, 255, .5);
+}
+
+.badge-notification.new-topic {
+  font-size: .7em;
+}
+
+.topic-statuses {
+  margin-right: 0.35em;
+}
+
+.wrap {
+  max-width: 1270px;
 }

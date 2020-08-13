@@ -15,6 +15,7 @@ img.avatar {
 
 .badge-wrapper {
   font-weight: normal;
+  align-items: baseline;
 }
 
 .d-header {
@@ -71,9 +72,19 @@ ol.category-breadcrumb {
 
   .badge-wrapper.bullet .badge-category-parent-bg,
   .badge-wrapper.bullet .badge-category-bg {
-    width: 12px;
-    height: 12px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
   }
+}
+
+.badge-wrapper.bullet .badge-category-parent-bg, 
+.badge-wrapper.bullet .badge-category-bg {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-top: .1em;
+    align-self: center;
 }
 
 .names .username {
