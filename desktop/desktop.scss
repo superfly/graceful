@@ -56,19 +56,18 @@ img.avatar {
   #site-logo {
     max-height: 30px !important;
   }
-
-  #site-logo.logo-small {
-    max-height: 29px !important;
-  }
 }
 
 .title-wrapper {
   width: auto;
 }
 
+.extra-info-wrapper {
+  padding: 0 1.5em 0 1em;
+}
+
 .extra-info-wrapper .topic-link {
   font-weight: normal;
-  padding: 0 1.5em 0 1em;
 }
 
 .list-controls {
