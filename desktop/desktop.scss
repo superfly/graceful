@@ -18,6 +18,10 @@ img.avatar {
   align-items: baseline;
 }
 
+.d-header-wrap {
+  position: fixed !important;
+}
+
 .d-header {
   height: 70px;
   background: hsl(222, 49%, 11%);
@@ -52,6 +56,10 @@ img.avatar {
   #site-logo {
     max-height: 30px !important;
   }
+
+  #site-logo.logo-small {
+    max-height: 29px !important;
+  }
 }
 
 .title-wrapper {
@@ -60,6 +68,7 @@ img.avatar {
 
 .extra-info-wrapper .topic-link {
   font-weight: normal;
+  padding: 0 1.5em 0 1em;
 }
 
 .list-controls {
