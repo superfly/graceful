@@ -164,6 +164,7 @@ tbody {
 
 header.d-header {
 	position: fixed;
+  top: 0;
 	box-shadow: 0 1px 1px hsla(215, 75%, 36%, .08), 0 4px 12px hsla(215, 75%, 36%, .12),
 		0 12px 24px hsla(215, 75%, 36%, .06);
 	.contents {
@@ -445,4 +446,9 @@ noscript > #main-outlet {
 
 .wrap {
   max-width: 1270px;
+}
+
+.popular-topics, 
+.recent-topics {
+  max-width: none !important;
 }
