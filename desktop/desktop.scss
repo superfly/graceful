@@ -249,3 +249,23 @@ nav.post-controls {
     width: 89%;
   }
 }
+
+// Fresh produce
+body:not(.category) {
+  .topic-list-item.category-fresh-produce {
+    position: relative;
+    background: #ecfdf5;
+    border-bottom-color: #a8f3d0;
+    box-shadow: 0 -0.0625rem 0 -0.03125rem #a8f3d0;
+  }
+
+  .main-link a.title {
+    color: #064e3b
+  }
+  
+  td,
+  .badge-wrapper.bullet span.badge-category,
+  .discourse-tag.simple, .discourse-tag.simple:visited, .discourse-tag.simple:hover {
+    color: #079669
+  }
+}
