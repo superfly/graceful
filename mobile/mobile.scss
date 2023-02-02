@@ -195,17 +195,21 @@ div.cooked img:not(.thumbnail) {
 // Fresh produce
 body:not(.category) .topic-list-item.category-fresh-produce {
   position: relative;
-  background: #ecfdf5;
+  background: #ecfdf5 !important;
   border-bottom-color: #a8f3d0;
   box-shadow: 0 -0.0625rem 0 -0.03125rem #a8f3d0;
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce .main-link a.title {
-  color: #064e3b
+  color: #064e3b;
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce td,
 body:not(.category) .topic-list-item.category-fresh-produce .badge-wrapper.bullet span.badge-category,
 body:not(.category) .topic-list-item.category-fresh-produce .discourse-tag.simple, .discourse-tag.simple:visited, .discourse-tag.simple:hover {
-  color: #079669
+  color: #079669;
+}
+
+body:not(.category) .topic-list-item.category-fresh-produce .main-link.focused {
+  box-shadow: inset 3px 0 0 #12b981;
 }
