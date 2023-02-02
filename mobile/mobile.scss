@@ -192,6 +192,10 @@ div.cooked img:not(.thumbnail) {
   max-width: 100%;
 }
 
+.topic-list .main-link.focused {
+  box-shadow: inset 3px 0 0 var(--tertiary);
+}
+
 // Fresh produce
 body:not(.category) .topic-list-item.category-fresh-produce {
   position: relative;
