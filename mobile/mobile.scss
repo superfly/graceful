@@ -251,8 +251,13 @@ body:not(.category) .topic-list-item.category-fresh-produce .main-link a.title {
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce td,
-body:not(.category) .topic-list-item.category-fresh-produce .badge-wrapper.bullet span.badge-category,
-body:not(.category) .topic-list-item.category-fresh-produce .discourse-tag.simple,
+body:not(.category)
+  .topic-list-item.category-fresh-produce
+  .badge-wrapper.bullet
+  span.badge-category,
+body:not(.category)
+  .topic-list-item.category-fresh-produce
+  .discourse-tag.simple,
 .discourse-tag.simple:visited,
 .discourse-tag.simple:hover {
   color: #079669;
