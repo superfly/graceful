@@ -1,454 +1,474 @@
+@use "sass:color";
+
 // Big thanks to jsthon for the initial work on this https://meta.discourse.org/u/jsthon/
 
 @import "common/foundation/variables";
 
-body {
-	color: hsl(222, 31%, 25%);
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji,
-		Segoe UI Emoji;
-}
-
-.alert {
-	padding: 0.75em 2.75em 0.75em 1em;
-	background-color: #f9b4b9;
-	color: #8a151e;
-	border-radius: 8px;
-}
-
-.alert.alert-info {
-	background-color: #b6eccc;
-	color: #117843;
-}
-
-.menu-panel {
-  border: 0;
-  box-shadow: 0 1px 1px hsla(215, 75%, 36%, .08), 0 3px 6px hsla(215, 75%, 36%, .08), 0 5px 15px hsla(215, 75%, 36%, .08), 0 10px 30px hsla(215, 75%, 36%, .08);
-  padding: 0.75em;
-  border-radius: 8px;
+@mixin box-shadow($value: 8px) {
+  box-shadow: 0 1px $value rgb(black, 0.18);
 }
 
 .background-container {
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: 100vw;
-	z-index: -1;
-	background-color: hsl(218, 44%, 92%);
-	@if $no-background-image == "false" {
-		@if $background-image != "default" {
-			// Thanks @tmoko!
-			background-image: url($background-image);
-		} @else {
-			// Default background pattern from Toptal Subtle Patterns
-			// ♡ https://www.toptal.com/designers/subtlepatterns/japanese-sayagata/
-			background-image: url($default-background);
-		}
-		@if $tile-background == "true" {
-			background-size: auto;
-		} @else {
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center center;
-		}
-	}
-}
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(
+    --gf-primary-very-low-or-primary-low,
+    $primary-very-low
+  );
 
-tbody {
-	border-width: 1px;
-}
+  @if $no-background-image == "false" {
+    @if $background-image != "default" {
+      // Thanks @tmoko!
+      background-image: url($background-image);
+    } @else {
+      // Default background pattern from Toptal Subtle Patterns
+      // ♡ https://www.toptal.com/designers/subtlepatterns/japanese-sayagata/
+      background-image: url($default-background);
+    }
 
-#main {
-	padding-top: 100px;
-  padding-bottom: 100px;
-  
-  @media screen and (max-width: 775px) {
-    padding-top: 70px;
-    padding-bottom: 0;
+    @if $tile-background == "true" {
+      background-size: auto;
+    } @else {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
   }
 }
 
+#main {
+  // need to show this above the background container
+  // can't use z-index: -1 because of a bug with pinch zoom
+  // in Safari iOS
+  z-index: 1;
+}
+
+.topic-list-body {
+  border-width: 1px;
+}
+
 #main-outlet {
-	background: $secondary;
-	border-radius: 10px;
-	width: calc(100% - 2em);
-	max-width: 1270px;
-	padding: 2em 2em 5%;
-	box-sizing: border-box;
-	padding-bottom: 5% !important;
-	box-shadow: 0 1px 1px hsla(215, 75%, 36%, .08), 0 4px 12px hsla(215, 75%, 36%, .12),
-		0 12px 24px hsla(215, 75%, 36%, .06);
-	.archetype-regular & {
-		min-height: 500px;
-	}
-	@media screen and (max-width: 775px) {
-		padding: 1.5em;
-		margin: 0;
-        width: 100%;
-        border-radius: 0;
-	}
+  box-sizing: border-box;
+  margin: 0 auto;
+  background: var(--secondary);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 980px;
+  padding: 3em 3em 5%;
+
+  .archetype-regular & {
+    min-height: 500px;
+  }
+
+  @media screen and (width <= 775px) {
+    padding: 1.5em;
+  }
+
+  @include box-shadow;
 }
 
-.btn,
-.select-kit.dropdown-select-box .dropdown-select-box-header {
-	border: 1px solid $primary-low;
-	color: $primary-high;
-	background: transparent;
-	border-radius: 4px;
-
-	&:hover {
-		background: $tertiary-low;
-		color: $tertiary;
-	}
+code,
+pre {
+  white-space: pre-wrap;
 }
 
-.btn-danger {
-	background: $danger;
-	color: $secondary;
-	&:hover {
-		background: darken($danger, 10%);
-		color: $secondary;
-	}
+.container.posts > .row {
+  width: 100%;
+}
+
+:root {
+  --d-hover: var(--tertiary-low);
+
+  // .btn-default
+  --d-button-default-text-color: var(--primary);
+  --d-button-default-text-color--hover: var(--tertiary);
+  --d-button-default-bg-color: var(--secondary);
+  --d-button-default-bg-color--hover: var(--tertiary-low);
+  --d-button-default-icon-color: var(--primary-high);
+  --d-button-default-icon-color--hover: var(--tertiary);
+
+  // .btn-primary
+  --d-button-primary-text-color: var(--secondary);
+  --d-button-primary-text-color--hover: var(--tertiary);
+  --d-button-primary-bg-color: var(--tertiary);
+  --d-button-primary-bg-color--hover: var(--tertiary-low);
+  --d-button-primary-icon-color: var(--secondary);
+  --d-button-primary-icon-color--hover: var(--tertiary);
+}
+
+.btn-default {
+  border: 1px solid var(--primary-low);
+
+  .discourse-no-touch & {
+    &:hover {
+      border-color: var(--tertiary);
+    }
+  }
 }
 
 .btn-primary {
-	background: $tertiary;
-	color: $secondary;
-	border-color: $tertiary;
+  background: var(--tertiary);
+  color: var(--secondary);
+  border-color: var(--tertiary);
 }
 
 .popup-menu-btn,
 .popup-menu-btn-danger,
 .modal-close {
-	border: none;
+  border: none;
 }
 
 #reply-control {
   border-radius: 10px 10px 0 0;
-  box-shadow: 0 0 1px rgba(23,80,161,0.08), 0 -1px 12px rgba(23,80,161,0.12), 0 -12px 24px rgba(23,80,161,0.06);
-	.select-kit.dropdown-select-box .dropdown-select-box-header {
-		.d-icon {
-			color: $tertiary;
-		}
-		&:hover {
-			background: $tertiary-low;
-		}
-	}
-	.d-editor-button-bar {
-		.select-kit.dropdown-select-box .dropdown-select-box-header {
-			border: none;
-		}
-	}
+
+  .select-kit.dropdown-select-box .dropdown-select-box-header {
+    color: var(--primary-medium);
+
+    &:hover {
+      background: var(--tertiary-low);
+    }
+  }
+
+  .d-editor-button-bar {
+    .select-kit.dropdown-select-box .dropdown-select-box-header {
+      border: none;
+    }
+
+    button {
+      color: var(--primary-medium);
+      border: none;
+    }
+  }
 }
 
 .open .grippie {
-	background: transparent;
-	&:before {
-		border-color: $primary-low;
-	}
+  border-radius: 10px 10px 0 0;
+  opacity: 0.4;
+
+  &::before {
+    border-color: var(--gf-primary-low-or-low-mid, $primary-low);
+  }
 }
 
 .d-editor-button-bar .btn {
-	border: none;
-	color: $tertiary;
-	.d-icon {
-		color: $tertiary;
-	}
-	&:hover {
-		background: $tertiary-low;
-		.d-icon {
-			color: $tertiary;
-		}
-	}
+  border: none;
+  color: var(--tertiary);
+
+  .d-icon {
+    color: var(--tertiary);
+  }
+
+  &:hover {
+    background: var(--tertiary-low);
+
+    .d-icon {
+      color: var(--tertiary);
+    }
+  }
 }
 
 header.d-header {
-	position: fixed;
-  top: 0;
-	box-shadow: 0 1px 1px hsla(215, 75%, 36%, .08), 0 4px 12px hsla(215, 75%, 36%, .12),
-		0 12px 24px hsla(215, 75%, 36%, .06);
-	.contents {
-		display: flex;
-		align-items: center;
-	}
-	.panel {
-		margin-left: auto;
-		order: 5;
-	}
-}
+  @include box-shadow;
 
-.d-header-icons .d-icon {
-	font-size: 1.25em;
-	color: $secondary;
+  .contents {
+    display: flex;
+    align-items: center;
+  }
+
+  .panel {
+    margin-left: auto;
+    order: 5;
+
+    .rtl & {
+      margin-left: 0;
+    }
+  }
 }
 
 .d-header-icons .icon:hover {
-	background: $secondary;
-	.d-icon {
-		color: $tertiary;
-	}
+  background: var(--tertiary-low);
+
+  .d-icon {
+    color: var(--tertiary);
+  }
 }
 
 .badge-wrapper.box {
-	padding: 2px 6px 2px 5px;
-	span {
-		border-radius: 4px;
-	}
+  padding: 2px 6px 2px 5px;
+
+  span {
+    border-radius: 4px;
+  }
 }
 
 .deleted .topic-body {
-	background-color: rgba($danger, 0.2);
+  background-color: var(--danger-hover, $danger-hover);
 }
 
 // Main category nav
-
 .list-controls .combo-box .combo-box-header {
-	background: transparent;
-	@media screen and (min-width: 775px) {
-		font-size: 1.1487em;
-	}
-	border-color: transparent;
+  background: transparent;
+
+  @media screen and (width >= 775px) {
+    font-size: 1.1487em;
+  }
+  border-color: transparent;
 }
 
 .select-kit.combo-box.category-drop .category-drop-header,
 .select-kit.combo-box.tag-drop .tag-drop-header {
-	border-radius: 4px;
+  border-radius: 4px;
+}
+
+.navigation-controls {
+  .fk-d-button-tooltip {
+    button {
+      height: 100%;
+    }
+  }
 }
 
 #list-area {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 #topic-title {
-	padding-top: 0;
+  padding-top: 0;
 }
 
 .topic-map .btn {
-	border-radius: 0;
+  border-radius: 0;
 }
 
 .badge-card {
-	border-radius: 4px;
+  border-radius: 4px;
 }
 
 // Horizontal topic timeline
-
 #topic-progress-wrapper {
-	right: 10vw !important;
+  right: 10vw !important;
 }
 
 #topic-progress-wrapper .topic-admin-menu-button-container .toggle-admin-menu {
-	background: $secondary;
-	border-radius: 4px 0 0 4px;
+  background: var(--secondary);
+  border-radius: 4px 0 0 4px;
 }
 
 #bulk-select {
-	background: transparent;
-	button {
-		background: $secondary;
-		box-shadow: 0 1px 1px hsla(215, 75%, 36%, .08), 0 2px 4px hsla(215, 75%, 36%, .12);
-		&:hover {
-			background: $tertiary-low;
-		}
-	}
+  background: transparent;
+
+  button {
+    background: var(--secondary);
+
+    @include box-shadow(2px);
+
+    &:hover {
+      background: var(--tertiary-low);
+    }
+  }
 }
 
 // User pages
-
 .user-preferences .bio-composer .d-editor-preview,
 .group-form-bio .d-editor-preview,
 .edit-category-tab-topic-template .d-editor-preview {
-	background: $tertiary-low;
+  background: var(--tertiary-low);
 }
 
 .badge-group {
-	background: $tertiary-low;
+  background: var(--tertiary-low);
 }
 
 .input-prepend.input-append input,
 .input-prepend.input-append select {
-	background: $tertiary-low;
+  background: var(--tertiary-low);
 }
 
 .modal .modal-body {
-	label .d-icon {
-		color: $tertiary;
-	}
+  label .d-icon {
+    color: var(--tertiary);
+  }
 }
 
 .user-main {
-	.staff-counters {
-		background: $tertiary-low;
-		color: $tertiary;
-		a {
-			color: $tertiary;
-		}
-		span {
-			color: $secondary;
-		}
-	}
-	.helpful-flags {
-		background-color: #2ecc40;
-	}
-	.flagged-posts {
-		background-color: #f012be;
-	}
-	.deleted-posts {
-		background-color: #ff851b;
-	}
-	.warnings-received {
-		background-color: #ff4136;
-	}
+  .staff-counters {
+    background: var(--tertiary-low);
+    color: var(--tertiary);
+
+    a {
+      color: var(--tertiary);
+    }
+
+    span {
+      color: var(--secondary);
+    }
+  }
+
+  .helpful-flags {
+    background-color: #2ecc40;
+  }
+
+  .flagged-posts {
+    background-color: #f012be;
+  }
+
+  .deleted-posts {
+    background-color: #ff851b;
+  }
+
+  .warnings-received {
+    background-color: #ff4136;
+  }
 }
 
 // admin
+.post-admin-menu {
+  .popup-menu-button {
+    border: none;
+  }
+}
 
 .admin-controls {
-	background: $tertiary-low;
-	.controls {
-		background: $tertiary-low;
-	}
-	nav {
-		background: $tertiary-low;
-		&:before {
-			background: linear-gradient(to right, $tertiary-low 0%, rgba(234, 236, 238, 0) 100%);
-		}
-		&:after {
-			background: linear-gradient(to right, rgba(234, 236, 238, 0) 0%, $tertiary-low 100%);
-		}
-	}
+  background: var(--tertiary-low);
+
+  .controls {
+    background: var(--tertiary-low);
+  }
+
+  nav {
+    background: var(--tertiary-low);
+
+    &::before {
+      background: linear-gradient(
+        to right,
+        var(--tertiary-low) 0%,
+        rgb(234, 236, 238, 0) 100%
+      );
+    }
+
+    &::after {
+      background: linear-gradient(
+        to right,
+        rgb(234, 236, 238, 0) 0%,
+        var(--tertiary-low) 100%
+      );
+    }
+  }
+}
+
+.boxed.white {
+  background-color: transparent !important;
 }
 
 .nav-stacked {
-	background: $tertiary-low;
-	li {
-		border-color: $tertiary-medium;
-	}
+  background: var(--tertiary-low);
+
+  li {
+    border-color: var(--tertiary-medium);
+  }
 }
 
 .admin-detail {
-	border-color: $tertiary-medium;
+  border-color: var(--tertiary-medium);
 }
 
 .content-list ul li a:hover {
-	background: $tertiary-low;
+  background: var(--tertiary-low);
 }
 
 span.user-title {
-	border: 1px solid #f1be18;
-	color: #f1be18 !important;
-	padding: 0 4px;
-	line-height: 1.2em;
-	font-size: 0.85em;
-	letter-spacing: 0.5px;
-	border-radius: 8px;
+  border: 1px solid #f1be18;
+  color: #f1be18 !important;
+  padding: 0 4px;
+  line-height: 1.2em;
+  font-size: 0.85em;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
 }
 
 .uploaded-image-preview {
-	background: $tertiary-low;
-	border-radius: 4px;
+  background: var(--tertiary-low);
+  border-radius: 4px;
 }
 
 // Select kit
-
 .select-kit.dropdown-select-box .dropdown-select-box-header {
-	&:hover {
-		.d-icon {
-			color: $tertiary;
-		}
-	}
+  &:hover {
+    .d-icon {
+      color: var(--tertiary);
+    }
+  }
 }
 
 .select-kit.dropdown-select-box.composer-actions .select-kit-header .d-icon {
-	border: none;
+  border: none;
 }
 
 .select-kit.dropdown-select-box.toolbar-popup-menu-options .select-kit-row {
-	background: $tertiary-low;
-	&:hover,
-	&.is-highlighted {
-		background: $tertiary;
-	}
+  &:hover,
+  &.is-highlighted {
+    background: var(--tertiary-low);
+  }
 }
 
-// Plugins
-
-// Babble
-
-.babble-sidebar {
-	height: calc(100% - 5.285em);
+.user-main .staff-counters > div,
+.user-main .staff-counters > div a {
+  color: var(--primary);
 }
-.babble-sidebar-collapsed {
-	border: none;
-	background: transparent;
-	button.widget-button {
-		background: $secondary;
-	}
-	.d-icon {
-		color: $primary;
-	}
+
+@media screen and (width <= 790px) {
+  .topic-area > .loading-container {
+    max-width: calc(100vw - 50px);
+  }
+}
+
+// new user menu
+.user-menu.revamped .menu-tabs-container {
+  border: none;
+
+  button {
+    margin: 0 0.5em 0.5em 0;
+  }
+
+  .bottom-tabs.tabs-list {
+    border-top: none;
+  }
 }
 
 // No-js view
 .crawler > #main-outlet,
 noscript > #main-outlet {
-	padding-top: 6em;
+  padding-top: 6em;
 }
 
-.composer-popup {
-  position: absolute;
-  width: calc(50% - 78px);
-  max-width: 724px;
-  top: 16px;
-  bottom: 16px;
-  left: 51%;
-  overflow-y: auto;
-  z-index: 500;
-  box-shadow: 0 1px 1px hsla(215, 75%, 36%, .08), 0 4px 12px hsla(215, 75%, 36%, .12), 0 12px 24px hsla(215, 75%, 36%, .06);
-  background: hsl(48, 100%, 77%);
-  border-radius: 8px;
-  padding: 10px 24px 35px 24px;
+// chat
+.chat-composer__wrapper {
+  background: transparent;
 }
 
-.composer-popup a.close {
-  right: 14px;
-  top: 12px;
+body.has-full-page-chat {
+  #main-outlet {
+    padding: 0;
+    border-radius: 12px;
+    overflow: hidden;
+  }
 }
 
-.composer-popup a.close:before {
-  position: relative;
-  top: -.1em;
+.full-page-chat .c-navbar-container {
+  top: unset;
 }
 
-.svg-icon, .svg-icon-title {
-  height: .9em;
-  width: .9em;
+.chat-channel {
+  height: calc(100vh - (var(--header-offset) + 6.75em));
 }
 
-.extra-info-wrapper .header-title {
-  font-size: 1.1em;
-  margin-bottom: .1em;
-}
+.powered-by-discourse {
+  margin-top: 1em;
 
-.extra-info-wrapper .badge-wrapper.bullet span.badge-category, 
-.extra-info-wrapper .badge-wrapper.bar span.badge-category, 
-.extra-info-wrapper .badge-wrapper.none span.badge-category {
-  color: rgba(255, 255, 255, .5);
-}
-
-.badge-notification.new-topic {
-  font-size: .7em;
-}
-
-.topic-statuses {
-  margin-right: 0.35em;
-}
-
-.wrap {
-  max-width: 1270px;
-}
-
-.popular-topics, 
-.recent-topics {
-  max-width: none !important;
+  @media screen and (width >= 1100px) {
+    margin-left: 4em;
+  }
 }
