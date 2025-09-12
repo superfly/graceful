@@ -1,7 +1,7 @@
 {
-  "name": "graceful",
-  "about_url": "https://meta.discourse.org/t/a-graceful-theme-for-discourse/93040/1",
-  "license_url": "https://meta.discourse.org/t/a-graceful-theme-for-discourse/93040/1",
+  "name": "Graceful Theme",
+  "about_url": "https://meta.discourse.org/t/a-graceful-theme-for-discourse/93040",
+  "license_url": "https://github.com/discourse/graceful/blob/main/LICENSE",
   "assets": {
     "default-background": "assets/sayagata-400px.png"
   },
@@ -9,14 +9,29 @@
     "Graceful": {
       "primary": "2c3854",
       "secondary": "ffffff",
-      "tertiary": "3c83e7",
-      "quaternary": "3c83e7",
-      "header_background": "3c83e7",
+      "tertiary": "88af8e",
+      "quaternary": "88af8e",
+      "header_background": "ffffff",
+      "header_primary": "333333",
+      "highlight": "d4efd8",
+      "danger": "f8745c",
+      "success": "41e254",
+      "love": "fa6c8d",
+      "selected": "edf3ee"
+    },
+    "Graceful Dark": {
+      "primary": "c4cfc5",
+      "secondary": "1d261e",
+      "tertiary": "88af8e",
+      "quaternary": "88af8e",
+      "header_background": "1d261e",
       "header_primary": "ffffff",
-      "highlight": "dab934",
-      "danger": "e66828",
-      "success": "3db874",
-      "love": "d237ab"
+      "highlight": "7e9280",
+      "danger": "f8745c",
+      "success": "41e254",
+      "love": "fa6c8d",
+      "selected": "2c412f"
     }
-  }
+  },
+  "screenshots": ["screenshots/light.png", "screenshots/dark.png"]
 }
