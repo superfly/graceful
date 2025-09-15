@@ -485,6 +485,28 @@ span.user-title {
   color: var(--primary);
 }
 
+// Fix user profile text visibility
+.user-preferences,
+.user-main,
+.user-nav,
+.user-content,
+.user-profile {
+  color: var(--primary);
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--primary);
+  }
+  
+  .control-label,
+  label {
+    color: var(--primary);
+  }
+  
+  .instructions {
+    color: var(--primary-medium);
+  }
+}
+
 @media screen and (width <= 790px) {
   .topic-area > .loading-container {
     max-width: calc(100vw - 50px);
