@@ -47,6 +47,7 @@ body {
     --gf-primary-very-low-or-primary-low,
     $primary-very-low
   );
+
   @if $no-background-image == "false" {
     @if $background-image != "default" {
       // Thanks @tmoko!
@@ -75,7 +76,7 @@ body {
   padding-top: 100px;
   padding-bottom: 100px;
 
-  @media screen and (max-width: 775px) {
+  @media screen and (width <= 775px) {
     padding-top: 70px;
     padding-bottom: 0;
   }
@@ -98,20 +99,15 @@ body {
     min-height: 500px;
   }
 
-  @media screen and (max-width: 775px) {
+  @media screen and (width <= 775px) {
     padding: 1.5em;
     margin: 0;
     width: 100%;
     border-radius: 0;
   }
-
   padding-bottom: 5% !important; // overriding inline style
-  @include box-shadow;
-}
 
-code,
-pre {
-  white-space: pre-wrap;
+  @include box-shadow;
 }
 
 code,
@@ -150,6 +146,7 @@ pre {
 .btn-danger {
   background: $danger;
   color: $secondary;
+
   &:hover {
     background: color.adjust($danger, $lightness: -10%);
     color: $secondary;
@@ -235,6 +232,7 @@ pre {
 header.d-header {
   position: fixed;
   top: 0;
+
   @include box-shadow;
 
   .contents {
@@ -281,7 +279,7 @@ header.d-header {
 .list-controls .combo-box .combo-box-header {
   background: transparent;
 
-  @media screen and (min-width: 775px) {
+  @media screen and (width >= 775px) {
     font-size: 1.1487em;
   }
   border-color: transparent;
@@ -331,6 +329,7 @@ header.d-header {
 
   button {
     background: var(--secondary);
+
     @include box-shadow(2px);
 
     &:hover {
@@ -487,7 +486,7 @@ span.user-title {
   color: var(--primary);
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (width <= 790px) {
   .topic-area > .loading-container {
     max-width: calc(100vw - 50px);
   }
@@ -504,11 +503,6 @@ span.user-title {
   .bottom-tabs.tabs-list {
     border-top: none;
   }
-}
-
-.user-main .staff-counters > div,
-.user-main .staff-counters > div a {
-  color: var(--primary);
 }
 
 .babble-sidebar-collapsed {
@@ -553,7 +547,7 @@ body.has-full-page-chat {
 .powered-by-discourse {
   margin-top: 1em;
 
-  @media screen and (min-width: 1100px) {
+  @media screen and (width >= 1100px) {
     margin-left: 4em;
   }
 }
