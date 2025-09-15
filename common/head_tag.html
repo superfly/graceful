@@ -1,8 +1,7 @@
 <script>
   // Only load statuspage in production/development, not during tests
   // Check multiple conditions to detect test environments
-  const isTestEnv = 
-    window.location.href.includes('test') ||
+  const isTestEnv =
     document.body.classList.contains('test-env') ||
     typeof window.QUnit !== 'undefined' ||
     typeof window.mocha !== 'undefined' ||
