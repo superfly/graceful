@@ -2,17 +2,17 @@
   // Only load statuspage in production/development, not during tests
   // Check multiple conditions to detect test environments
   const isTestEnv =
-    document.body.classList.contains('test-env') ||
-    typeof window.QUnit !== 'undefined' ||
-    typeof window.mocha !== 'undefined' ||
-    typeof window.jasmine !== 'undefined' ||
-    window.location.hostname === 'localhost' ||
-    window.location.hostname === '127.0.0.1' ||
-    window.location.port === '31337' ||
-    document.querySelector('meta[name="environment"]')?.content === 'test' ||
-    window.navigator.userAgent.includes('HeadlessChrome') ||
+    document.body.classList.contains("test-env") ||
+    typeof window.QUnit !== "undefined" ||
+    typeof window.mocha !== "undefined" ||
+    typeof window.jasmine !== "undefined" ||
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1" ||
+    window.location.port === "31337" ||
+    document.querySelector('meta[name="environment"]')?.content === "test" ||
+    window.navigator.userAgent.includes("HeadlessChrome") ||
     window.navigator.webdriver === true ||
-    typeof window.callPhantom === 'function';
+    typeof window.callPhantom === "function";
 
   if (!isTestEnv) {
     const script = document.createElement("script");
