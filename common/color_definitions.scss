@@ -1,4 +1,5 @@
-$gf-header-bg: dark-light-choose($header_background, $secondary-very-high);
+// $gf-header-bg: dark-light-choose($header_background, $secondary-very-high);
+$gf-header-bg: $header_background;
 
 :root {
   --gf-primary-very-low-or-primary-low: #{dark-light-choose(
