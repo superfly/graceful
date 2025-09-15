@@ -344,13 +344,13 @@ body.has-sidebar-page.has-full-page-chat #main-outlet-wrapper {
 // Fresh produce
 body:not(.category) .topic-list-item.category-fresh-produce {
   position: relative;
-  background: #ecfdf5 !important;
-  border-bottom-color: #a8f3d0;
-  box-shadow: 0 -0.0625rem 0 -0.03125rem #a8f3d0;
+  background: #{dark-light-choose(#ecfdf5, #1a2e23)} !important;
+  border-bottom-color: #{dark-light-choose(#a8f3d0, #2d5a3d)};
+  box-shadow: 0 -0.0625rem 0 -0.03125rem #{dark-light-choose(#a8f3d0, #2d5a3d)};
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce .main-link a.title {
-  color: #064e3b;
+  color: #{dark-light-choose(#064e3b, #a7f3d0)};
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce td,
@@ -363,9 +363,18 @@ body:not(.category)
   .discourse-tag.simple,
 .discourse-tag.simple:visited,
 .discourse-tag.simple:hover {
-  color: #079669;
+  color: #{dark-light-choose(#047857, #6ee7b7)};
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce .main-link.focused {
-  box-shadow: inset 3px 0 0 #12b981;
+  box-shadow: inset 3px 0 0 #{dark-light-choose(#10b981, #34d399)};
+}
+
+// Fix text colors in Fresh Produce notifications to use green instead of purple
+.category-fresh-produce .alert,
+.category-fresh-produce .topic-list-header,
+.category-fresh-produce a,
+.category-fresh-produce .btn,
+.alert-info a {
+  color: #{dark-light-choose(#047857, #6ee7b7)} !important;
 }
