@@ -38,15 +38,19 @@ body {
 
   #site-logo {
     max-height: 25px;
-    padding: #{dark-light-choose(0, 3px 6px)};
-    background: #{dark-light-choose(transparent, #f8fafc)};
-    border-radius: #{dark-light-choose(0, 4px)};
-    box-shadow: #{dark-light-choose(none, 0 1px 2px rgb(0 0 0 / 0.1))};
   }
+}
 
-  .d-header-icons .d-icon {
-    font-size: 1.5em;
-  }
+.d-header-icons .d-icon {
+  font-size: 1.5em;
+}
+
+// Logo background only when header background is light (explicit light mode)
+.scheme-light .d-header #site-logo {
+  padding: 3px 6px;
+  background: rgb(var(--gf-header-bg-rgb), 0.92);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.1);
 }
 
 .topic-list-main-link,
