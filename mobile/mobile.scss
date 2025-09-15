@@ -247,16 +247,16 @@ div.cooked {
   box-shadow: inset 3px 0 0 var(--tertiary);
 }
 
-// Fresh produce
+// Fresh produce - using properly defined color variables
 body:not(.category) .topic-list-item.category-fresh-produce {
   position: relative;
-  background: #ecfdf5 !important;
-  border-bottom-color: #a8f3d0;
-  box-shadow: 0 -0.0625rem 0 -0.03125rem #a8f3d0;
+  background: var(--fresh-produce-bg) !important;
+  border-bottom-color: var(--fresh-produce-border);
+  box-shadow: 0 -0.0625rem 0 -0.03125rem var(--fresh-produce-border);
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce .main-link a.title {
-  color: #064e3b;
+  color: var(--fresh-produce-title);
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce td,
@@ -269,9 +269,9 @@ body:not(.category)
   .discourse-tag.simple,
 .discourse-tag.simple:visited,
 .discourse-tag.simple:hover {
-  color: #079669;
+  color: var(--fresh-produce-text);
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce .main-link.focused {
-  box-shadow: inset 3px 0 0 #12b981;
+  box-shadow: inset 3px 0 0 var(--fresh-produce-focus);
 }
