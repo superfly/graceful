@@ -345,16 +345,16 @@ body.has-sidebar-page.has-full-page-chat #main-outlet-wrapper {
   box-shadow: inset 3px 0 0 var(--tertiary);
 }
 
-// Fresh produce
+// Fresh produce - using properly defined color variables
 body:not(.category) .topic-list-item.category-fresh-produce {
   position: relative;
-  background: #{dark-light-choose(#d1fae5, #0f2419)} !important;
-  border-bottom-color: #{dark-light-choose(#86efac, #1f4d32)};
-  box-shadow: 0 -0.0625rem 0 -0.03125rem #{dark-light-choose(#86efac, #1f4d32)};
+  background: var(--fresh-produce-bg) !important;
+  border-bottom-color: var(--fresh-produce-border);
+  box-shadow: 0 -0.0625rem 0 -0.03125rem var(--fresh-produce-border);
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce .main-link a.title {
-  color: #{dark-light-choose(#064e3b, #86e8ab)};
+  color: var(--fresh-produce-title);
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce td,
@@ -367,11 +367,11 @@ body:not(.category)
   .discourse-tag.simple,
 .discourse-tag.simple:visited,
 .discourse-tag.simple:hover {
-  color: #{dark-light-choose(#047857, #4ade80)};
+  color: var(--fresh-produce-text);
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce .main-link.focused {
-  box-shadow: inset 3px 0 0 #{dark-light-choose(#10b981, #22c55e)};
+  box-shadow: inset 3px 0 0 var(--fresh-produce-focus);
 }
 
 // Fix text colors in Fresh Produce notifications to use green instead of purple
@@ -380,5 +380,5 @@ body:not(.category) .topic-list-item.category-fresh-produce .main-link.focused {
 .category-fresh-produce a,
 .category-fresh-produce .btn,
 .alert-info a {
-  color: #{dark-light-choose(#047857, #4ade80)} !important;
+  color: var(--fresh-produce-text) !important;
 }
