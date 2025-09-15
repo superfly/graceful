@@ -64,6 +64,10 @@ img.avatar {
 
   #site-logo {
     max-height: 30px !important;
+    padding: 4px 8px;
+    background: #f8fafc;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
   }
 }
 
@@ -344,13 +348,13 @@ body.has-sidebar-page.has-full-page-chat #main-outlet-wrapper {
 // Fresh produce
 body:not(.category) .topic-list-item.category-fresh-produce {
   position: relative;
-  background: #{dark-light-choose(#ecfdf5, #1a2e23)} !important;
-  border-bottom-color: #{dark-light-choose(#a8f3d0, #2d5a3d)};
-  box-shadow: 0 -0.0625rem 0 -0.03125rem #{dark-light-choose(#a8f3d0, #2d5a3d)};
+  background: #{dark-light-choose(#ecfdf5, #0f2419)} !important;
+  border-bottom-color: #{dark-light-choose(#a8f3d0, #1f4d32)};
+  box-shadow: 0 -0.0625rem 0 -0.03125rem #{dark-light-choose(#a8f3d0, #1f4d32)};
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce .main-link a.title {
-  color: #{dark-light-choose(#064e3b, #a7f3d0)};
+  color: #{dark-light-choose(#064e3b, #86e8ab)};
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce td,
@@ -363,11 +367,11 @@ body:not(.category)
   .discourse-tag.simple,
 .discourse-tag.simple:visited,
 .discourse-tag.simple:hover {
-  color: #{dark-light-choose(#047857, #6ee7b7)};
+  color: #{dark-light-choose(#047857, #4ade80)};
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce .main-link.focused {
-  box-shadow: inset 3px 0 0 #{dark-light-choose(#10b981, #34d399)};
+  box-shadow: inset 3px 0 0 #{dark-light-choose(#10b981, #22c55e)};
 }
 
 // Fix text colors in Fresh Produce notifications to use green instead of purple
@@ -376,5 +380,5 @@ body:not(.category) .topic-list-item.category-fresh-produce .main-link.focused {
 .category-fresh-produce a,
 .category-fresh-produce .btn,
 .alert-info a {
-  color: #{dark-light-choose(#047857, #6ee7b7)} !important;
+  color: #{dark-light-choose(#047857, #4ade80)} !important;
 }
