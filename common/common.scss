@@ -7,16 +7,16 @@
 }
 
 body {
-  color: hsl(222, 31%, 25%);
+  color: hsl(222deg, 31%, 25%);
   font-family:
     -apple-system,
     BlinkMacSystemFont,
-    Segoe UI,
+    "Segoe UI",
     Helvetica,
     Arial,
     sans-serif,
-    Apple Color Emoji,
-    Segoe UI Emoji;
+    "Apple Color emoji",
+    "Segoe UI emoji";
 }
 
 .alert {
@@ -34,10 +34,10 @@ body {
 .menu-panel {
   border: 0;
   box-shadow:
-    0 1px 1px hsla(215, 75%, 36%, 0.08),
-    0 3px 6px hsla(215, 75%, 36%, 0.08),
-    0 5px 15px hsla(215, 75%, 36%, 0.08),
-    0 10px 30px hsla(215, 75%, 36%, 0.08);
+    0 1px 1px hsl(215deg, 75%, 36%, 0.08),
+    0 3px 6px hsl(215deg, 75%, 36%, 0.08),
+    0 5px 15px hsl(215deg, 75%, 36%, 0.08),
+    0 10px 30px hsl(215deg, 75%, 36%, 0.08);
   padding: 0.75em;
   border-radius: 8px;
 }
@@ -104,14 +104,14 @@ body {
     min-height: 500px;
   }
 
-  @media screen and (width <= 775px) {
+  @media screen and (max-width: 775px) {
     padding: 1.5em;
     margin: 0;
     width: 100%;
     border-radius: 0;
   }
 
-  padding-bottom: 5% !important; //overriding inline style
+  padding-bottom: 5% !important; // overriding inline style
   @include box-shadow;
 }
 
@@ -157,7 +157,7 @@ pre {
   background: $danger;
   color: $secondary;
   &:hover {
-    background: darken($danger, 10%);
+    background: color.adjust($danger, $lightness: -10%);
     color: $secondary;
   }
 }
@@ -183,15 +183,17 @@ pre {
 #reply-control {
   border-radius: 10px 10px 0 0;
   box-shadow:
-    0 0 1px rgba(23, 80, 161, 0.08),
-    0 -1px 12px rgba(23, 80, 161, 0.12),
-    0 -12px 24px rgba(23, 80, 161, 0.06);
+    0 0 1px rgb(23, 80, 161, 0.08),
+    0 -1px 12px rgb(23, 80, 161, 0.12),
+    0 -12px 24px rgb(23, 80, 161, 0.06);
 
   .select-kit.dropdown-select-box .dropdown-select-box-header {
     color: var(--primary-medium);
+
     .d-icon {
       color: $tertiary;
     }
+
     &:hover {
       background: var(--tertiary-low);
     }
@@ -285,7 +287,7 @@ header.d-header {
 .list-controls .combo-box .combo-box-header {
   background: transparent;
 
-  @media screen and (width >= 775px) {
+  @media screen and (min-width: 775px) {
     font-size: 1.1487em;
   }
   border-color: transparent;
@@ -491,7 +493,7 @@ span.user-title {
   color: var(--primary);
 }
 
-@media screen and (width <= 790px) {
+@media screen and (max-width: 790px) {
   .topic-area > .loading-container {
     max-width: calc(100vw - 50px);
   }
@@ -557,7 +559,7 @@ body.has-full-page-chat {
 .powered-by-discourse {
   margin-top: 1em;
 
-  @media screen and (width >= 1100px) {
+  @media screen and (min-width: 1100px) {
     margin-left: 4em;
   }
 }
