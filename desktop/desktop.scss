@@ -64,10 +64,10 @@ img.avatar {
 
   #site-logo {
     max-height: 30px !important;
-    padding: 4px 8px;
-    background: #f8fafc;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+    padding: #{dark-light-choose(0, 4px 8px)};
+    background: #{dark-light-choose(transparent, #f8fafc)};
+    border-radius: #{dark-light-choose(0, 6px)};
+    box-shadow: #{dark-light-choose(none, 0 1px 3px rgb(0 0 0 / 0.1))};
   }
 }
 
@@ -348,9 +348,9 @@ body.has-sidebar-page.has-full-page-chat #main-outlet-wrapper {
 // Fresh produce
 body:not(.category) .topic-list-item.category-fresh-produce {
   position: relative;
-  background: #{dark-light-choose(#ecfdf5, #0f2419)} !important;
-  border-bottom-color: #{dark-light-choose(#a8f3d0, #1f4d32)};
-  box-shadow: 0 -0.0625rem 0 -0.03125rem #{dark-light-choose(#a8f3d0, #1f4d32)};
+  background: #{dark-light-choose(#d1fae5, #0f2419)} !important;
+  border-bottom-color: #{dark-light-choose(#86efac, #1f4d32)};
+  box-shadow: 0 -0.0625rem 0 -0.03125rem #{dark-light-choose(#86efac, #1f4d32)};
 }
 
 body:not(.category) .topic-list-item.category-fresh-produce .main-link a.title {
