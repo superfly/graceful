@@ -1,0 +1,32 @@
+// $gf-header-bg: dark-light-choose($header_background, $secondary-very-high);
+$gf-header-bg: $header_background;
+
+// Fresh Produce colors using dark-light-choose
+$fresh-produce-bg: dark-light-choose(#d1fae5, #0f2419);
+$fresh-produce-border: dark-light-choose(#86efac, #1f4d32);
+$fresh-produce-title: dark-light-choose(#064e3b, #86e8ab);
+$fresh-produce-text: dark-light-choose(#047857, #4ade80);
+$fresh-produce-focus: dark-light-choose(#10b981, #22c55e);
+
+:root {
+  --gf-primary-very-low-or-primary-low: #{dark-light-choose(
+      $primary-very-low,
+      $primary-low
+    )};
+  --gf-header-bg-rgb: #{hexToRGB($gf-header-bg)};
+  --gf-primary-low-or-low-mid: #{dark-light-choose(
+      $primary-low,
+      $primary-low-mid
+    )};
+  --default-text-color: #{dark-light-choose(
+      hsl(222deg, 31%, 25%),
+      hsl(222deg, 35%, 79%)
+    )};
+
+  // Fresh Produce CSS custom properties
+  --fresh-produce-bg: #{$fresh-produce-bg};
+  --fresh-produce-border: #{$fresh-produce-border};
+  --fresh-produce-title: #{$fresh-produce-title};
+  --fresh-produce-text: #{$fresh-produce-text};
+  --fresh-produce-focus: #{$fresh-produce-focus};
+}
