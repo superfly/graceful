@@ -7,7 +7,7 @@
 }
 
 body {
-  color: hsl(222deg, 31%, 25%);
+  color: var(--default-text-color);
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
     "Apple Color emoji", "Segoe UI emoji";

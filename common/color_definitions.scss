@@ -18,6 +18,10 @@ $fresh-produce-focus: dark-light-choose(#10b981, #22c55e);
       $primary-low,
       $primary-low-mid
     )};
+  --default-text-color: #{dark-light-choose(
+      hsl(222deg, 31%, 25%),
+      hsl(222deg, 35%, 79%)
+    )};
 
   // Fresh Produce CSS custom properties
   --fresh-produce-bg: #{$fresh-produce-bg};
