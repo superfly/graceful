@@ -492,16 +492,21 @@ span.user-title {
 .user-content,
 .user-profile {
   color: var(--primary);
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: var(--primary);
   }
-  
+
   .control-label,
   label {
     color: var(--primary);
   }
-  
+
   .instructions {
     color: var(--primary-medium);
   }
