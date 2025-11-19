@@ -373,12 +373,3 @@ body:not(.category)
 body:not(.category) .topic-list-item.category-fresh-produce .main-link.focused {
   box-shadow: inset 3px 0 0 var(--fresh-produce-focus);
 }
-
-// Fix text colors in Fresh Produce notifications to use green instead of purple
-.category-fresh-produce .alert,
-.category-fresh-produce .topic-list-header,
-.category-fresh-produce a,
-.category-fresh-produce .btn,
-.alert-info a {
-  color: var(--fresh-produce-text) !important;
-}
