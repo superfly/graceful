@@ -1,2 +1,4 @@
 .discourse-site
 HELP
+node_modules
+.claude/
