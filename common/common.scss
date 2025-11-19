@@ -107,6 +107,7 @@ body {
 
   @include box-shadow;
 }
+
 /*
 2025-10-24 removed because it was breaking scrolling in codeblocks.
 https://flyio.slack.com/archives/C4ZCA1Z6C/p1761308845605219?thread_ts=1761308046.056589&cid=C4ZCA1Z6C
@@ -115,6 +116,7 @@ pre {
   white-space: pre-wrap;
 }
 */
+
 .container.posts > .row {
   width: 100%;
 }
